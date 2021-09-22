@@ -1,11 +1,12 @@
-import './App.css';
+import React from "react";
+import Navbar from "./components/navbar"
 
-function App() {
-  return (
-    <div className="App">
-      <h1>CookiesKali</h1>
-    </div>
-  );
-}
-
+const App = () => {
+    return ( 
+      <div>
+        <Navbar/>
+        <h1>Cookies Kali</h1>
+      </div>
+    );
+};
 export default App;

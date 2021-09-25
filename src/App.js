@@ -1,12 +1,18 @@
 import React from "react";
-import Navbar from "./components/navbar"
+import Navbar from "./components/navbar/navbar"
+import ItemListContainer from "./components/itemListContainer/itemListContainer";
 
-const App = () => {
-    return ( 
+class App extends React.Component {
+	
+	render() {
+		return ( 
       <div>
         <Navbar/>
-        <h1>Cookies Kali</h1>
+        <ItemListContainer greeting='username'/>
       </div>
     );
-};
+	}
+}
+
 export default App;
+

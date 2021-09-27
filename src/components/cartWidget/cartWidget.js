@@ -1,10 +1,16 @@
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
-const cartWidget = () => {
+const CartWidget = () => {
     return (
-    <FaShoppingCart />
+        <>
+        <Form className="d-flex">
+            <Button variant="dark"><FaShoppingCart/></Button>
+        </Form>
+        </>
     )
 }
 
-export default cartWidget
+export default CartWidget

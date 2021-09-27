@@ -2,9 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import FaShoppingCart from '../cartWidget/cartWidget'
+import CartWidget from '../cartWidget/cartWidget'
 
 
 const NavBar = (props) => {
@@ -24,9 +22,7 @@ const NavBar = (props) => {
                 </NavDropdown>
                 <Nav.Link href="#link">Contact</Nav.Link>
             </Nav>
-            <Form className="d-flex">
-              <Button variant="dark"><FaShoppingCart/></Button>
-            </Form>
+            <CartWidget/>
             </Navbar.Collapse>
         </Container>
         </Navbar>

@@ -8,7 +8,7 @@ class App extends React.Component {
 		return ( 
       <div>
         <Navbar/>
-        <ItemListContainer greeting='username'/>
+        <ItemListContainer item='cookies' initial='1' stock='6'/>
       </div>
     );
 	}

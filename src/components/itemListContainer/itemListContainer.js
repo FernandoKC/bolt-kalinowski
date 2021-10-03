@@ -1,9 +1,11 @@
 import React from 'react'
+import ItemCount from '../itemCount/itemCount';
 
 const ItemListContainer = (props) => {
     return (
         <>
-        <h1>Welcome {props.greeting}</h1>
+        <h1>item: {props.item} </h1>
+        <ItemCount initial = {props.initial} stock = {props.stock}/>
         </>
     );
 };

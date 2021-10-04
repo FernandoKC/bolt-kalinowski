@@ -1,8 +1,7 @@
 import React from 'react'
 
 const ItemCount = (props) => {
-    let initial = parseInt(props.initial)
-    const [count, setCount] = React.useState(initial)
+    const [count, setCount] = React.useState(props.initial)
     
     const handleIncrement = () => {
         if (count < props.stock) {
@@ -11,16 +10,20 @@ const ItemCount = (props) => {
     }
 
     const handleDecrement = () => {
-        if (count > initial) {
+        if (count > props.initial) {
             setCount(count - 1)
         }
     }
 
+    const showAdd = () => {
+        console.log(count)
+    }
 
     return (
         <div>
            <h1>{count}</h1>
            <button onClick={handleIncrement}>+</button>
+           <button onClick={showAdd}>Add To Cart</button>
            <button onClick={handleDecrement}>-</button>
         </div>
     )

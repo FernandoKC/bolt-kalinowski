@@ -16,7 +16,9 @@ const ItemCount = (props) => {
     }
 
     const showAdd = () => {
-        console.log(count)
+        if (count > 0) {
+            console.log(count)
+        }
     }
 
     return (

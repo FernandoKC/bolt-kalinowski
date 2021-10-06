@@ -17,16 +17,16 @@ const ItemCount = (props) => {
 
     const showAdd = () => {
         if (count > 0) {
-            console.log(count)
+            console.log("ID: ",props.id.toString()," Cantidad: ",count )
         }
     }
 
     return (
         <div>
            <h1>{count}</h1>
-           <button onClick={handleIncrement}>+</button>
-           <button onClick={showAdd}>Add To Cart</button>
            <button onClick={handleDecrement}>-</button>
+           <button onClick={showAdd}>Add To Cart</button>
+           <button onClick={handleIncrement}>+</button>
         </div>
     )
 }

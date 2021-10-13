@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import ItemCount from '../../components/itemCount/itemCount';
 
 const Item = ({data}) => {
     return (
@@ -7,7 +8,13 @@ const Item = ({data}) => {
         <Card.Img variant="top" src={data.image} style={{maxHeight: '300px', width: 'auto'}}/>
             <Card.Body style={{ maxHeight: '200px'  }}>
                 <Card.Title style={{ maxHeight: '50px' }} className="overflow-hidden"> {data.title}</Card.Title>
-            </Card.Body>  
+                <Card.Text style={{ maxHeight: '100px' }} className="overflow-auto">
+                    {data.description}
+                </Card.Text>
+                <Card.Text >Price: $ {data.price}</Card.Text>
+            </Card.Body>
+            <ItemCount style={{ bottom: '0' }} initial = {data.initial} stock = {data.stock} id = {data.id} price = {data.price}/>
+            <Card.Text >Stock: {data.stock}</Card.Text>
         </Card>
     )
 }

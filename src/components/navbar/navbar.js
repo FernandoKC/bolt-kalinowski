@@ -14,13 +14,12 @@ const NavBar = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="#home">Purchase</Nav.Link>
-                <NavDropdown title="Cookies" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Classic</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Chocolate</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Red Velvet</NavDropdown.Item>
+                <Nav.Link href="/ItemList">All Items</Nav.Link>
+                <NavDropdown title="Categories" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">men's clothing</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">jewelery</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">electronics</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#link">Contact</Nav.Link>
             </Nav>
             <CartWidget/>
             </Navbar.Collapse>

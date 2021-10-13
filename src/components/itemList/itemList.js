@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Item from "../item/item";
 import './itemList.css'
 
@@ -8,9 +10,9 @@ const ItemList = () => {
   const max = 10;
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setItems(data));
+    axios("https://fakestoreapi.com/products").then((json) => 
+      setItems(json.data)
+    );
   }, []);
 
   return (
@@ -21,7 +23,9 @@ const ItemList = () => {
         item["initial"] = 1;
         return (
           <div className="itemDiv" key={item.id.toString()}>
-            <Item data={item} />
+            <Link to={`/detail/${item.id}`}>
+              <Item data={item} />
+            </Link>
           </div>
         );
       })}

@@ -17,7 +17,7 @@ const ItemCount = (props) => {
 
     const showAdd = () => {
         if (count > 0) {
-            console.log("ID: ",props.id.toString()," Cantidad: ",count )
+            console.log("ID: ",props.id.toString()," Cantidad: ",count," Total Price: ",props.price*count )
         }
     }
 

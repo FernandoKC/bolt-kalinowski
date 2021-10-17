@@ -19,7 +19,7 @@ const Detail = ({ match }) => {
     item["stock"] = rand.toFixed();
     
     return (
-        <div className="CardContainer">
+        <div className="CardContainer d-flex justify-content-center col-md-12">
               <div className="itemDiv" key={item.id}>
                   <ItemDetail data={item}/>
               </div>

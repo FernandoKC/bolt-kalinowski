@@ -22,7 +22,7 @@ const ItemCount = (props) => {
     }
 
     return (
-        <div>
+        <div className="itemCounter">
            <h1>{count}</h1>
            <button onClick={handleDecrement}>-</button>
            <button onClick={showAdd}>Add To Cart</button>

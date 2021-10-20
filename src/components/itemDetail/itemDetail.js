@@ -1,9 +1,18 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 import ItemCount from '../../components/itemCount/itemCount';
 import './itemDetail.css'
 
 const Item = ({data}) => {
+    const [item, setItem] = React.useState(data)
+    const [finish, setFinish] = React.useState(false)
+
+    const onAdd = (cantidad) => {
+        setItem(cantidad)
+        setFinish(!finish)
+    }
+    
     return (
         <Card key={data.id}>
             <div className="image-container">
@@ -17,7 +26,17 @@ const Item = ({data}) => {
                 <Card.Subtitle  >Price: $ {data.price}</Card.Subtitle >
                 <Card.Subtitle >Stock: {data.stock}</Card.Subtitle>
             </Card.Body>
-            <ItemCount style={{ bottom: '0' }} initial = {data.initial} stock = {data.stock} id = {data.id} price = {data.price}/>
+            {
+                finish ? (
+                    <div className="itemCounter">
+                        <Link to={`/cart`}>
+                            <button>Go to Cart</button>
+                        </Link>
+                    </div>
+                ):(
+                    <ItemCount style={{ bottom: '0' }} item={item} onClick={(cant) => onAdd(cant)}/>
+                )
+            }
         </Card>
     )
 }

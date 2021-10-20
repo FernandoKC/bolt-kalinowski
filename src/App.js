@@ -8,6 +8,7 @@ import Detail from "./views/Detail/Detail";
 import ItemList from "./views/ItemList/ItemList";
 import Category from "./views/Category/Category";
 import Home from "./views/Home/Home";
+import Cart from "./views/Cart/Cart";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Switch>
+          <Route path="/cart" component={Cart}/>
           <Route path="/ItemList" component={ItemList}/>
           <Route path="/Detail/:id" component={Detail}/>
           <Route path="/Category/:id" component={Category}/>

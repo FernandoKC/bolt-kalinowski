@@ -9,7 +9,7 @@ const CartWidget = () => {
         <>
         <Form className="d-flex">
             <Link to={`/cart`}>                
-            <Button variant="dark"><FaShoppingCart/></Button>
+                <Button variant="dark"><FaShoppingCart/></Button>
             </Link>
         </Form>
         </>

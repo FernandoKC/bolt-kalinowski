@@ -11,7 +11,7 @@
   }
   
   .card-body {
-    max-height: 200px;
+    height: auto;
   }
   
   .card-title {

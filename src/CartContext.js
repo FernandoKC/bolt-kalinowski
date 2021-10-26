@@ -13,24 +13,19 @@ export const ItemsProvider = ({ children }) => {
       setCartItem([...cartItem, item]);
     } else {
       alert("item already exists");
-      console.log(cartItem);
     }
   };
 
-  const removeItem = (item) => {
-    if (isInCart(item.id)) {
-      setCartItem([]);
+  const removeItem = (itemid) => {
+    if (isInCart(itemid.id)) {
+      setCartItem(cartItem.filter((item) => item.id !== itemid.id));
     } else {
-      console.log(cartItem);
       alert("item does not exists");
     }
   };
 
   const isInCart = (id) => {
-    let filteredItems = cartItem.find((item) => {
-      return item.id === id;
-    });
-    return filteredItems;
+    return !!cartItem.find((item) => item.id === id);
   };
 
   return (

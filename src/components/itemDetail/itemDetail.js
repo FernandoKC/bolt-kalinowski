@@ -13,8 +13,13 @@ const Item = ({ data }) => {
     useContext(ItemsContext);
 
   const onAdd = (cantidad) => {
-    item["quantity"] = cantidad;
-    addItem(item)
+    let newItem = {
+      "id" : item.id,
+      "title" : item.title,
+      "quantity" : cantidad,
+      "price" : item.price,
+    }
+    addItem(newItem)
     setFinish(!finish);
   };
   return (

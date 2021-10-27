@@ -4,11 +4,22 @@ import { ItemsContext } from "../../CartContext";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [cartItem, , , , removeItem] = useContext(ItemsContext);
+  const [cartItem, , clear, , removeItem] = useContext(ItemsContext);
 
   const removeOnClick = (item) => {
     removeItem(item);
   };
+
+  const removeAllOnClick = () => {
+    clear();
+  };
+  let totalQtd = 0
+  let totalPrice = 0
+  cartItem.forEach(item => {
+    totalQtd+=item.quantity
+    totalPrice+=item.price * item.quantity
+    
+  });
 
   return (
     <div className="CardContainer">

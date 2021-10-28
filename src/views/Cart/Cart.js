@@ -16,16 +16,16 @@ const Cart = () => {
   let totalQtd = 0
   let totalPrice = 0
   cartItem.forEach(item => {
-    totalQtd+=item.quantity
-    totalPrice+=item.price * item.quantity
-    
+    totalQtd += item.quantity
+    totalPrice += item.price * item.quantity
+
   });
 
   return (
     cartItem.length === 0 ? (
       <div>
         <h1>Your cart is empty! </h1>
-        <Link to={`/ItemList`}>
+        <Link to={`/ItemList`} >
           Click here
         </Link>
         &nbsp;to buy something!
@@ -47,8 +47,8 @@ const Cart = () => {
                 <tr key={item.id.toString()}>
                   <td><button onClick={() => removeOnClick(item)}>X</button> {item.title} </td>
                   <td>{item.quantity}</td>
-                  <td>$ {item.price}</td>
-                  <td>$ {item.price * item.quantity}</td>
+                  <td>$ {item.price.toFixed(2)}</td>
+                  <td>$ {(item.price * item.quantity).toFixed(2)}</td>
                 </tr>
               );
             })}
@@ -56,7 +56,7 @@ const Cart = () => {
               <td>Total</td>
               <td>{totalQtd}</td>
               <td></td>
-              <td colSpan="2">$ {totalPrice}</td>
+              <td colSpan="2">$ {totalPrice.toFixed(2)}</td>
             </tr>
             <tr>
               <td colSpan="4"><button onClick={() => removeAllOnClick()}>Clear Cart</button></td>

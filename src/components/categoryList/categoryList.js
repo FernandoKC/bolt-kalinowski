@@ -18,7 +18,8 @@ const CategoryList = () => {
         return (
           <Link
             to={`/category/${category}`}
-            data-rr-ui-dropdown-item="" class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            className="dropdown-item"
             key={category.toString()}
           >
             {category}

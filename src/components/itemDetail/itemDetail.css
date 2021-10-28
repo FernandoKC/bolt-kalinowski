@@ -1,29 +1,29 @@
 .card {
-    width: 18rem;
-    height: auto;
-  }
-  
-  .card-img-top {
-    min-height: 150px;
-    max-height: 300px;
-    max-width: 17.5rem;
-  }
-  
-  .card-title {
-    max-height: 50px;
-  }
+  width: 18rem;
+  height: auto;
+}
 
-  .image-container {
-    height: 300px;
-    position: relative;
-  }
-  .itemCounter {
-      margin: 10px;
-      align-items: center;
-      position: relative;
-  }
+.card-img-top {
+  min-height: 150px;
+  max-height: 300px;
+  max-width: 17.5rem;
+}
 
-  h1.itemCounter {
-    position: absolute;
-    color: blue;
-  }
+.card-title {
+  max-height: 50px;
+}
+
+.image-container {
+  height: 300px;
+  position: relative;
+}
+.itemCounter {
+  margin: 10px;
+  align-items: center;
+  position: relative;
+}
+
+h1.itemCounter {
+  position: absolute;
+  color: blue;
+}

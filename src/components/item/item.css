@@ -1,25 +1,24 @@
 .card {
-    width: 18rem;
-    height: auto;
-  }
-  
-  .card-img-top {
-    min-height: 150px;
-    max-height: 300px;
-    max-width: 17.5rem;
-    position: absolute;
-  }
-  
-  .card-body {
-    height: auto;
-  }
-  
-  .card-title {
-    max-height: 50px;
-  }
+  width: 18rem;
+  height: auto;
+}
 
-  .image-container {
-    height: 300px;
-    position: relative;
-  }
-  
+.card-img-top {
+  min-height: 150px;
+  max-height: 300px;
+  max-width: 17.5rem;
+  position: absolute;
+}
+
+.card-body {
+  height: auto;
+}
+
+.card-title {
+  max-height: 50px;
+}
+
+.image-container {
+  height: 300px;
+  position: relative;
+}

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Item from "../item/item";
-import './itemList.css'
+import "./itemList.css";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -10,7 +10,7 @@ const ItemList = () => {
   const max = 10;
 
   useEffect(() => {
-    axios("https://fakestoreapi.com/products").then((json) => 
+    axios("https://fakestoreapi.com/products").then((json) =>
       setItems(json.data)
     );
   }, []);

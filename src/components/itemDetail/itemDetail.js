@@ -7,19 +7,18 @@ import "./itemDetail.css";
 import { ItemsContext } from "../../CartContext";
 
 const Item = ({ data }) => {
-  const [item, setItem] = useState(data);
+  const [item] = useState(data);
   const [finish, setFinish] = useState(false);
-  const [,,,addItem,] =
-    useContext(ItemsContext);
+  const [, , , addItem] = useContext(ItemsContext);
 
   const onAdd = (cantidad) => {
     let newItem = {
-      "id" : item.id,
-      "title" : item.title,
-      "quantity" : cantidad,
-      "price" : item.price,
-    }
-    addItem(newItem)
+      id: item.id,
+      title: item.title,
+      quantity: cantidad,
+      price: item.price,
+    };
+    addItem(newItem);
     setFinish(!finish);
   };
   return (

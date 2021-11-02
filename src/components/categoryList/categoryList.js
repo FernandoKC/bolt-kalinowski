@@ -1,15 +1,23 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const CategoryList = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios("https://fakestoreapi.com/products/categories").then((json) =>
-      setCategories(json.data)
-    );
+    const requestData = async () => {
+      const docs = [];
+      const items = await getDocs(collection(db, "categories"));
+      items.forEach((document) => {
+        docs.push(document.id);
+      });
+      setCategories(docs);
+    };
+    requestData();
   }, []);
 
   return (

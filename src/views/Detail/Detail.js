@@ -1,22 +1,27 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../../components/itemDetail/itemDetail";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const Detail = ({ match }) => {
-  let itemID = match.params.id;
+  let itemID = parseInt(match.params.id);
   const [item, setItem] = useState({});
   const min = 1;
   const max = 10;
 
   useEffect(() => {
-    axios(`https://fakestoreapi.com/products/${itemID}`).then((res) =>
-      setItem(res.data)
-    );
+    const requestData = async () => {
+      const docs = [];
+      const q = query(collection(db, "products"), where("id", "==", itemID));
+      const items = await getDocs(q);
+      items.forEach((document) => {
+        const rand = min + Math.random() * (max - min);
+        docs.push({ ...document.data(), initial: 1, stock: rand.toFixed() });
+      });
+      setItem(docs[0]);
+    };
+    requestData();
   }, [itemID]);
-
-  const rand = min + Math.random() * (max - min);
-  item["initial"] = 1;
-  item["stock"] = rand.toFixed();
 
   return (
     <div className="CardContainer d-flex justify-content-center col-md-auto">

@@ -13,8 +13,10 @@ const Cart = () => {
   const removeAllOnClick = () => {
     clear();
   };
+
   let totalQtd = 0;
   let totalPrice = 0;
+
   cartItem.forEach((item) => {
     totalQtd += item.quantity;
     totalPrice += item.price * item.quantity;

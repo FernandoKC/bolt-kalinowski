@@ -17,7 +17,7 @@ const Item = ({ data }) => {
       title: item.title,
       quantity: cantidad,
       price: item.price,
-      stock: parseInt(item.stock),
+      total: item.price * cantidad,
     };
     addItem(newItem);
     setFinish(!finish);

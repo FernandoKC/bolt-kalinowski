@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const ItemCount = ({ item, onClick }) => {
   const [count, setCount] = React.useState(item.initial);
@@ -17,10 +20,25 @@ const ItemCount = ({ item, onClick }) => {
 
   return (
     <div className="itemCounter">
-      <h1>{count}</h1>
-      <button onClick={handleDecrement}>-</button>
-      <button onClick={() => onClick(count)}>Add To Cart</button>
-      <button onClick={handleIncrement}>+</button>
+      <Row>
+        <Col className="justify-content-center d-flex">
+          <h1>{count}</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="justify-content-center d-flex">
+          <Button variant="outline-secondary" onClick={handleDecrement}>
+            -
+          </Button>
+          <Button variant="outline-secondary" onClick={() => onClick(count)}>
+            Add To Cart
+          </Button>
+          <Button variant="outline-secondary" onClick={handleIncrement}>
+            +
+          </Button>
+        </Col>
+      </Row>
+      <br />
     </div>
   );
 };

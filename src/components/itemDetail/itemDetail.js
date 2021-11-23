@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import ItemCount from "../../components/itemCount/itemCount";
 import "./itemDetail.css";
@@ -18,10 +19,13 @@ const Item = ({ data }) => {
       quantity: cantidad,
       price: item.price,
       total: item.price * cantidad,
+      stock: item.stock,
+      firestoreId: item.firestoreId,
     };
     addItem(newItem);
     setFinish(!finish);
   };
+
   return (
     <Card key={data.id}>
       <div className="image-container">
@@ -36,10 +40,11 @@ const Item = ({ data }) => {
         <Card.Subtitle>Stock: {data.stock}</Card.Subtitle>
       </Card.Body>
       {finish ? (
-        <div className="itemCounter">
+        <div className="itemCounter justify-content-center d-flex">
           <Link to={`/cart`}>
-            <button>Go to Cart</button>
+            <Button variant="outline-secondary">Go to cart</Button>
           </Link>
+          <br />
         </div>
       ) : (
         <ItemCount

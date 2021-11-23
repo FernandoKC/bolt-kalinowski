@@ -1,9 +1,12 @@
-# About
+<h1 align="center">Project title</h1>
+Bolt Kalinowski
 
-This project was made to simulate an e-shop, it uses and external API https://fakestoreapi.com/ to get the items, images, description, price, etc.
+<p align="center">Project Description</p>
 
-## Dependencies
+This project was made to simulate an e-shop, it uses [Firebase](https://firebase.google.com/) database to store the items, images, description, price, values, stock.
 
+<p align="center">Project Description</p>
+- firestore
 - bootstrap
 - bootstrap-icons
 

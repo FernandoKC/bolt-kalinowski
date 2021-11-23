@@ -1,5 +1,5 @@
 <h1 align="center">Project title</h1>
-Bolt Kalinowski
+<p align="center">Bolt Kalinowski</p>
 
 <p align="center">Project Description</p>
 

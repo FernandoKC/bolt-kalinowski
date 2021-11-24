@@ -6,8 +6,6 @@ import { db } from "../../firebase";
 const Detail = ({ match }) => {
   let itemID = parseInt(match.params.id);
   const [item, setItem] = useState({});
-  const min = 1;
-  const max = 10;
 
   useEffect(() => {
     const requestData = async () => {
@@ -15,8 +13,7 @@ const Detail = ({ match }) => {
       const q = query(collection(db, "products"), where("id", "==", itemID));
       const items = await getDocs(q);
       items.forEach((document) => {
-        const rand = min + Math.random() * (max - min);
-        docs.push({ ...document.data(), initial: 1, stock: rand.toFixed() });
+        docs.push({ ...document.data(), initial: 1, firestoreId: document.id });
       });
       setItem(docs[0]);
     };

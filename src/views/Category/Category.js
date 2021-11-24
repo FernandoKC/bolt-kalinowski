@@ -7,8 +7,6 @@ import { db } from "../../firebase";
 const Detail = ({ match }) => {
   let category = match.params.id;
   const [items, setItems] = useState([]);
-  const min = 1;
-  const max = 10;
 
   useEffect(() => {
     const requestData = async () => {
@@ -21,7 +19,7 @@ const Detail = ({ match }) => {
       );
       const items = await getDocs(q);
       items.forEach((document) => {
-        docs.push({ ...document.data() });
+        docs.push({ ...document.data(), firestoreId: document.id });
       });
       setItems(docs);
     };
@@ -31,15 +29,14 @@ const Detail = ({ match }) => {
   return (
     <div className="CardContainer">
       {items.map((item) => {
-        const rand = min + Math.random() * (max - min);
-        item["stock"] = rand;
-        item["initial"] = 1;
-        return (
+        return item.stock >= 1 ? (
           <div className="itemDiv" key={item.id}>
             <Link to={`/detail/${item.id}`}>
               <Item data={item} />
             </Link>
           </div>
+        ) : (
+          console.log("No stock available for:", item.title)
         );
       })}
     </div>

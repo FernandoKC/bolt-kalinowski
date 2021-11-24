@@ -13,7 +13,7 @@ const NavBar = () => {
       <Navbar bg="dark" variant="dark" expand="xl" sticky="top">
         <Container fluid>
           <Link to={`/`} className="navbar-brand" tabIndex="0">
-            Kali Store
+            Bolt Store
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
